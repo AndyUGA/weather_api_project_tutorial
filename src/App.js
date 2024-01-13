@@ -34,7 +34,7 @@ function App() {
       setError();
       setWeatherData([]);
       setLoading(true);
-      const apiKey = '3aefa162b26d82be4a341c6664720dea';
+      // const apiKey = '';
 
       //get longitude and latitude based on city that user inputs
       let resp = await axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${apiKey}`);
