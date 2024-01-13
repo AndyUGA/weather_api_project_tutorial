@@ -34,14 +34,14 @@ function App() {
       setError();
       setWeatherData([]);
       setLoading(true);
+      const apiKey = '3aefa162b26d82be4a341c6664720dea';
 
       //get longitude and latitude based on city that user inputs
-      let resp = await axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=49683f3f5afad3b6c0d3dd5c3b1a9028`);
+      let resp = await axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${apiKey}`);
       const lat = resp.data[0].lat;
       const long = resp.data[0].lon;
 
       //set your api key here
-      const apiKey = '';
 
       //Make weather api call using axios
       const weatherData = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&appid=${apiKey}&units=${unitType}`);
